@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>flipkart</title>
+    <style>
+    
+        #prodctsListTextarea {
+            display: none; 
+    </style>
+</head>
+<body>
+
+    <h1>shop every product here!!</h1>
+
+    <hr>
+
+    <h2>About Us</h2>
+    <p>We are your friendly shopping partner We have many products.</p>
+
+    <hr>
+
+    <h2>Our products</h2>
+    <p>Enter a product name below to be purchased.</p>
+     <input type="text" id="searchInput" placeholder="e.g., mobiles" oninput="findmobiles()">
+    
+    
+    <p id="mobileInfo"></p>
+
+    <hr>
+
+    <h2>Home Delivery</h2>
+    <p>Fill in your details to request a home delivery.</p>
+
+    <form action="mailto:orders@flipkaart.com" method="post" enctype="text/plain">
+<p>
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name">
+        </p>
+
+        <p>
+            <label for="address">Your Address:</label><br>
+            <input type="text" id="address" name="address">
+        </p>
+
+        <p>
+            <!-- This checkbox will show the text box when clicked -->
+            <input type="checkbox" id="showproductbox" onchange="toogleproductBox()">
+            <label for="showprouctBox"><strong>I need to specify my models</strong></label>
+        </p>
+  <p id="productListTextarea">
+            <label for="products">List the products you need:</label><br>
+            <textarea id="products" name="products" rows="4" cols="40"></textarea>
+        </p>
+
+        <br>
+        <input type="submit" value="Request Delivery">
+    </form>
+
+    <hr>
+
+    <h2>Contact Details</h2>
+    <p><strong>Address:</strong> nellore, vrc</p>
+    <p><strong>Phone:</strong>9676435316</p>
+    <p><strong>Email:</strong> info@flipkaart.com</p>
+     <hr>
+    <!-- This is the JavaScript to make the new features work -->
+    <script>
+        // --- Function for the Home Delivery Checkbox ---
+        function toggleproductBox() {
+            // Get the checkbox and the text box area
+            var checkBox = document.getElementById("showproductBox");
+            var textArea = document.getElementById("productListTextarea");
+
+            // If the checkbox is checked, show the text box
+            if (checkBox.checked == true) {
+                textArea.style.display = "block";
+            } else {
+                // If not checked, hide it
+                textArea.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
